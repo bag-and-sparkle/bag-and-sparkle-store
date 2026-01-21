@@ -91,3 +91,42 @@ footer {
   padding: 20px;
   font-size: 14px;
 }
+.fb-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  background:#1877f2;
+  color:#fff;
+  border-radius:30px;
+  text-decoration:none;
+}
+
+.details{
+  max-width:1000px;
+  margin:50px auto;
+  display:flex;
+  gap:30px;
+  padding:20px;
+}
+
+.details img{
+  width:45%;
+  border-radius:15px;
+}
+
+.details .info{
+  width:55%;
+}
+
+.details ul{
+  margin:20px 0;
+}
+
+.order-btn{
+  display:inline-block;
+  padding:15px 30px;
+  background:linear-gradient(to right,#b08d2f,#d4af37);
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+}
