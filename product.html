@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Details | Bag & SpArkle Store</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.details{
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+.details img{
+  width:100%;
+  border-radius:12px;
+}
+.details h1{
+  font-size:28px;
+}
+.details .price{
+  font-size:24px;
+  color:#b08d2f;
+  margin:15px 0;
+}
+.details p{
+  line-height:1.7;
+  color:#444;
+}
+.order-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:14px 26px;
+  background:linear-gradient(to right,#b08d2f,#d4af37);
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <h1>Bag & SpArkle <span>Store</span></h1>
+  <p>Official Premium Product Store</p>
+</header>
+
+<section class="details">
+  <img id="pImg" src="">
+  <div>
+    <h1 id="pName"></h1>
+    <div class="price" id="pPrice"></div>
+    <p id="pDesc"></p>
+
+    <a id="waBtn" class="order-btn" target="_blank">
+      Order via WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- Facebook Button -->
+<a href="https://www.facebook.com/YOUR_PAGE_LINK" target="_blank" class="fb-float">
+Facebook
+</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const name  = params.get("name");
+const price = params.get("price");
+const img   = params.get("img");
+const desc  = params.get("desc");
+
+document.getElementById("pName").innerText = name;
+document.getElementById("pPrice").innerText = "৳ " + price;
+document.getElementById("pImg").src = img;
+document.getElementById("pDesc").innerText = desc;
+
+document.getElementById("waBtn").href =
+"https://wa.me/8801615574609?text=আমি%20" + name + "%20টি%20অর্ডার%20করতে%20চাই";
+</script>
+
+</body>
+</html>
