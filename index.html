@@ -5,9 +5,31 @@
   <title>Bag & SpArkle Store | we are committed to precision, quality & services</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <!-- Facebook Floating Button -->
+<a href="https://www.facebook.com/share/1Bs7tDNuen/"
+   target="_blank"
+   class="fb-float">
+   Facebook
+</a>
+  <script>
+const searchInput = document.getElementById("searchInput");
+searchInput.addEventListener("keyup", function () {
+  let filter = searchInput.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(filter) ? "block" : "none";
+  });
+});
+</script>
 <body>
 
 <header class="hero">
+  <!-- Search Box -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search products...">
+</div>
   <h1>Bag & SpArkle <span>Store</span></h1>
   <p>Premium Bags & Jewelry</p>
 
