@@ -2,250 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bag & SpArkle Store | Premium Bags & Jewelry</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#111;color:#fff}
-
-/* HEADER */
-.hero{
-  background:linear-gradient(135deg,#000,#2a2a2a);
-  padding:40px 20px;
-  text-align:center;
-}
-.hero h1{font-size:36px}
-.hero span{color:#f4c430}
-.hero p{opacity:.8;margin:10px 0}
-
-.features{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:15px}
-.features div{background:#222;padding:8px 14px;border-radius:20px;font-size:14px}
-
-/* SEARCH */
-.search-box{margin:20px auto;max-width:400px}
-.search-box input{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:25px;
-  outline:none;
-}
-
-/* PRODUCTS */
-.products{padding:40px 20px}
-.products h2{text-align:center;margin-bottom:25px}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#1c1c1c;
-  border-radius:15px;
-  overflow:hidden;
-  text-align:center;
-  transition:.3s;
-}
-.card:hover{transform:translateY(-6px)}
-.card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  cursor:pointer;
-}
-.card h3{font-size:16px;padding:10px}
-.price{color:#f4c430;font-weight:bold}
-
-.actions{
-  padding:10px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.actions a{
-  text-decoration:none;
-  padding:8px;
-  border-radius:20px;
-  background:#25D366;
-  color:#000;
-  font-weight:bold;
-}
-.details-btn{
-  background:#f4c430;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.8);
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-}
-.modal-content{
-  background:#1c1c1c;
-  max-width:500px;
-  width:90%;
-  border-radius:15px;
-  padding:15px;
-}
-.modal img{width:100%;border-radius:10px;margin-bottom:10px}
-.close{
-  text-align:right;
-  cursor:pointer;
-  font-size:20px;
-  color:#f4c430;
-}
-
-/* PAYMENT */
-.payment{
-  background:#000;
-  padding:30px;
-  text-align:center;
-}
-.payment h3{margin-bottom:10px}
-.payment span{
-  display:inline-block;
-  background:#222;
-  padding:10px 15px;
-  margin:5px;
-  border-radius:20px;
-}
-
-/* FOOTER */
-footer{
-  background:#000;
-  padding:25px;
-  text-align:center;
-}
-footer a{
-  display:inline-block;
-  margin-top:10px;
-  background:#1877f2;
-  color:#fff;
-  padding:10px 18px;
-  border-radius:25px;
-  text-decoration:none;
-}
-</style>
+<title>Bag & SpArkle Store</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="hero">
-  <h1>Bag & SpArkle <span>Store</span></h1>
-  <p>Premium Bags & Jewelry</p>
-
-  <div class="features">
-    <div>✔ Premium Quality</div>
-    <div>✔ Cash on Delivery</div>
-    <div>✔ WhatsApp Order</div>
-  </div>
-
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search bags or jewelry...">
-  </div>
+<header>
+  <h1>Bag & SpArkle Store</h1>
+  <input type="text" id="searchInput" placeholder="Search products...">
 </header>
 
-<section class="products">
-<h2>Featured Products</h2>
+<h2 class="section-title">Hottest Picks</h2>
 
-<div class="grid">
+<div class="product-slider" id="productList">
 
-<div class="card" onclick="openModal('Premium Denim Handbag','High quality denim & leather handbag.','https://iili.io/fr5xa3B.md.png')">
-<img src="https://iili.io/fr5xa3B.md.png">
-<h3>Premium Denim & Leather Handbag</h3>
-<p class="price">৳ 1,050</p>
-<div class="actions">
-<a href="https://wa.me/8801615574609" target="_blank">Order Now</a>
-<a class="details-btn">View Details</a>
-<div class="card" onclick="openModal(
-'Premium Embroidered Canvas Tote Bag',
-'🔹 Material: High-Quality Canvas
-🔹 Design: Elegant embroidery with premium finishing
-🔹 Straps: Thick & patterned straps for comfortable carrying
-🔹 Attachments: Faux leather reinforced handles for extra durability
-🔹 Capacity: Spacious enough for daily essentials
-🔹 Color: Classic Black (easy to match with any outfit)
-🔹 Use: Office, university, shopping, casual day-out',
-<img src="https://iili.io/f4RHV5X.md.jpg")">
-  <img src="https://iili.io/f4RHV5X.md.jpg">
-  <h3>Premium Embroidered Canvas Tote Bag</h3>
-  <p class="price">৳ 500</p>
-
-  <div class="actions">
-    <a href="https://wa.me/8801615574609?text=আমি%20Premium Embroidered Canvas Tote Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">
-      Order Now
-    </a>
-    <a class="details-btn">View Details</a>
+  <!-- Product Card -->
+  <div class="product" data-name="Ladies Hand Bag">
+    <span class="discount">30% OFF</span>
+    <img src="images/product1.png">
+    <h3>Ladies Hand Bag</h3>
+    <p>
+      <del>৳2500</del> <strong>৳1750</strong>
+    </p>
+    <small>Free Delivery</small>
+    <a href="product.html">View Details</a>
   </div>
-</div>
+
+  <!-- ৩০টা পর্যন্ত একইভাবে কপি করবে -->
 
 </div>
-</div>
 
-<div class="card" onclick="openModal('Luxury Necklace Set','Premium jewelry set for special occasions.','https://iili.io/JEWEL1.jpg')">
-<img src="https://iili.io/JEWEL1.jpg">
-<h3>Luxury Necklace Set</h3>
-<p class="price">৳ 1,550</p>
-<div class="actions">
-<a href="https://wa.me/8801615574609" target="_blank">Order Now</a>
-<a class="details-btn">View Details</a>
-</div>
-</div>
+<h2 class="section-title">Our Collections</h2>
 
+<div class="banner-slider">
+  <img src="images/banner1.png">
+  <img src="images/banner2.png">
 </div>
-</section>
-
-<!-- PAYMENT -->
-<section class="payment">
-<h3>Payment Methods</h3>
-<span>bKash</span>
-<span>Nagad</span>
-<span>Cash on Delivery</span>
-</section>
 
 <footer>
-<p>© 2026 Bag & SpArkle Store</p>
-<p>Official Premium Store</p>
-<a href="https://www.facebook.com/share/1CPMP3DXRK/" target="_blank">Visit Our Facebook Page</a>
+  <p>✔ Free Delivery All Over Bangladesh</p>
+  <a href="https://facebook.com/YOURPAGE" target="_blank">
+    Visit our Facebook Page
+  </a>
 </footer>
 
-<!-- MODAL -->
-<div class="modal" id="productModal">
-<div class="modal-content">
-<div class="close" onclick="closeModal()">✖</div>
-<img id="modalImg">
-<h3 id="modalTitle"></h3>
-<p id="modalDesc"></p>
-</div>
-</div>
-
-<script>
-/* SEARCH */
-document.getElementById("searchInput").addEventListener("keyup",function(){
-  let value=this.value.toLowerCase();
-  document.querySelectorAll(".card").forEach(card=>{
-    card.style.display=card.innerText.toLowerCase().includes(value)?"":"none";
-  });
-});
-
-/* MODAL */
-function openModal(title,desc,img){
-  document.getElementById("modalTitle").innerText=title;
-  document.getElementById("modalDesc").innerText=desc;
-  document.getElementById("modalImg").src=img;
-  document.getElementById("productModal").style.display="flex";
-}
-function closeModal(){
-  document.getElementById("productModal").style.display="none";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
