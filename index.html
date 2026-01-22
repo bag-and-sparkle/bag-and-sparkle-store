@@ -1,185 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bag & SpArkle Store | we are committed to precision, quality & services</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-  <script>
-const searchInput = document.getElementById("searchInput");
-searchInput.addEventListener("keyup", function () {
-  let filter = searchInput.value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
+<meta charset="UTF-8">
+<title>Bag & SpArkle Store | Premium Bags & Jewelry</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
-    card.style.display = text.includes(filter) ? "block" : "none";
-  });
-});
-</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#111;color:#fff}
+
+/* HEADER */
+.hero{
+  background:linear-gradient(135deg,#000,#2a2a2a);
+  padding:40px 20px;
+  text-align:center;
+}
+.hero h1{font-size:36px}
+.hero span{color:#f4c430}
+.hero p{opacity:.8;margin:10px 0}
+
+.features{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:15px}
+.features div{background:#222;padding:8px 14px;border-radius:20px;font-size:14px}
+
+/* SEARCH */
+.search-box{margin:20px auto;max-width:400px}
+.search-box input{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  outline:none;
+}
+
+/* PRODUCTS */
+.products{padding:40px 20px}
+.products h2{text-align:center;margin-bottom:25px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1c1c1c;
+  border-radius:15px;
+  overflow:hidden;
+  text-align:center;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  cursor:pointer;
+}
+.card h3{font-size:16px;padding:10px}
+.price{color:#f4c430;font-weight:bold}
+
+.actions{
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.actions a{
+  text-decoration:none;
+  padding:8px;
+  border-radius:20px;
+  background:#25D366;
+  color:#000;
+  font-weight:bold;
+}
+.details-btn{
+  background:#f4c430;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.modal-content{
+  background:#1c1c1c;
+  max-width:500px;
+  width:90%;
+  border-radius:15px;
+  padding:15px;
+}
+.modal img{width:100%;border-radius:10px;margin-bottom:10px}
+.close{
+  text-align:right;
+  cursor:pointer;
+  font-size:20px;
+  color:#f4c430;
+}
+
+/* PAYMENT */
+.payment{
+  background:#000;
+  padding:30px;
+  text-align:center;
+}
+.payment h3{margin-bottom:10px}
+.payment span{
+  display:inline-block;
+  background:#222;
+  padding:10px 15px;
+  margin:5px;
+  border-radius:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:25px;
+  text-align:center;
+}
+footer a{
+  display:inline-block;
+  margin-top:10px;
+  background:#1877f2;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:25px;
+  text-decoration:none;
+}
+</style>
+</head>
+
 <body>
 
 <header class="hero">
-  <!-- Search Box -->
-<div class="search-box">
-  <input type="text" id="searchInput" placeholder="Search products...">
-</div>
   <h1>Bag & SpArkle <span>Store</span></h1>
   <p>Premium Bags & Jewelry</p>
 
   <div class="features">
     <div>✔ Premium Quality</div>
     <div>✔ Cash on Delivery</div>
-    <div>✔ Easy WhatsApp Order</div>
+    <div>✔ WhatsApp Order</div>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search bags or jewelry...">
   </div>
 </header>
 
-<!-- ================= BAGS SECTION ================= -->
 <section class="products">
-  <h2>Featured Bags</h2>
+<h2>Featured Products</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <!-- Product 1 -->
-    <div class="card">
-      <img src="https://iili.io/fr5xa3B.md.png">
-      <h3>Premium Denim & Leather Handbag</h3>
-      <p class="price">৳ 1,050</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Denim%20and%20Leather%20Handbag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Oder Now</a>
-     </div>
+<div class="card" onclick="openModal('Premium Denim Handbag','High quality denim & leather handbag.','https://iili.io/fr5xa3B.md.png')">
+<img src="https://iili.io/fr5xa3B.md.png">
+<h3>Premium Denim & Leather Handbag</h3>
+<p class="price">৳ 1,050</p>
+<div class="actions">
+<a href="https://wa.me/8801615574609" target="_blank">Order Now</a>
+<a class="details-btn">View Details</a>
+</div>
+</div>
 
-    <!-- Product 2 -->
-    <div class="card">
-      <img src="https://iili.io/frcfGGR.md.jpg">
-      <h3>Embroidered Canvas Tote Bag</h3>
-      <p class="price">৳ 500</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Embroidered%20Canvas%20Tote%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
+<div class="card" onclick="openModal('Luxury Necklace Set','Premium jewelry set for special occasions.','https://iili.io/JEWEL1.jpg')">
+<img src="https://iili.io/JEWEL1.jpg">
+<h3>Luxury Necklace Set</h3>
+<p class="price">৳ 1,550</p>
+<div class="actions">
+<a href="https://wa.me/8801615574609" target="_blank">Order Now</a>
+<a class="details-btn">View Details</a>
+</div>
+</div>
 
-    <!-- Product 3 -->
-    <div class="card">
-      <img src="https://iili.io/frc1uY7.md.jpg">
-      <h3>Premium Bangla Art Tote Bag</h3>
-      <p class="price">৳ 350</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Bangla%20Art%20Tote%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 4 -->
-    <div class="card">
-      <img src="https://iili.io/frcPusf.md.jpg">
-      <h3>Premium Quilted Chain Handbag</h3>
-      <p class="price">৳ 900</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Quilted%20Chain%20Handbag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 5 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG1.jpg">
-      <h3>Luxury Office Handbag</h3>
-      <p class="price">৳ 1,200</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Luxury%20Office%20Handbag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 6 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG2.jpg">
-      <h3>Stylish Shoulder Bag</h3>
-      <p class="price">৳ 850</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Stylish%20Shoulder%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 7 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG3.jpg">
-      <h3>Classic Ladies Handbag</h3>
-      <p class="price">৳ 980</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Classic%20Ladies%20Handbag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 8 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG4.jpg">
-      <h3>Premium Travel Tote</h3>
-      <p class="price">৳ 1,100</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Travel%20Tote%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 9 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG5.jpg">
-      <h3>Modern Crossbody Bag</h3>
-      <p class="price">৳ 750</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Modern%20Crossbody%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 10 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG6.jpg">
-      <h3>Elegant Party Handbag</h3>
-      <p class="price">৳ 1,300</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Elegant%20Party%20Handbag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 11 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG7.jpg">
-      <h3>Minimal Leather Bag</h3>
-      <p class="price">৳ 1,400</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Minimal%20Leather%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <!-- Product 12 -->
-    <div class="card">
-      <img src="https://iili.io/NEWBAG8.jpg">
-      <h3>Daily Use Shoulder Bag</h3>
-      <p class="price">৳ 680</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Daily%20Use%20Shoulder%20Bag%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-  </div>
+</div>
 </section>
 
-<!-- ================= JEWELRY SECTION ================= -->
-<section class="products">
-  <h2>Jewelry Collection</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://iili.io/JEWEL1.jpg">
-      <h3>Luxury Necklace Set</h3>
-      <p class="price">৳ 1,550</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Luxury%20Necklace%20Set%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://iili.io/JEWEL2.jpg">
-      <h3>Elegant Earrings</h3>
-      <p class="price">৳ 750</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Elegant%20Earrings%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://iili.io/JEWEL3.jpg">
-      <h3>Premium Bracelet</h3>
-      <p class="price">৳ 980</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Premium%20Bracelet%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-    <div class="card">
-      <img src="https://iili.io/JEWEL4.jpg">
-      <h3>Pearl Jewelry Set</h3>
-      <p class="price">৳ 1,850</p>
-      <a href="https://wa.me/8801615574609?text=আমি%20Pearl%20Jewelry%20Set%20টি%20অর্ডার%20করতে%20চাই" target="_blank">Order Now</a>
-    </div>
-
-  </div>
+<!-- PAYMENT -->
+<section class="payment">
+<h3>Payment Methods</h3>
+<span>bKash</span>
+<span>Nagad</span>
+<span>Cash on Delivery</span>
 </section>
 
 <footer>
-  <p>© 2026 Bag & SpArkle Store</p>
-  <p>Order via WhatsApp | Official Premium Store</p>
+<p>© 2026 Bag & SpArkle Store</p>
+<p>Official Premium Store</p>
+<a href="https://facebook.com/YOUR_PAGE_LINK" target="_blank">Visit Our Facebook Page</a>
 </footer>
+
+<!-- MODAL -->
+<div class="modal" id="productModal">
+<div class="modal-content">
+<div class="close" onclick="closeModal()">✖</div>
+<img id="modalImg">
+<h3 id="modalTitle"></h3>
+<p id="modalDesc"></p>
+</div>
+</div>
+
+<script>
+/* SEARCH */
+document.getElementById("searchInput").addEventListener("keyup",function(){
+  let value=this.value.toLowerCase();
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display=card.innerText.toLowerCase().includes(value)?"":"none";
+  });
+});
+
+/* MODAL */
+function openModal(title,desc,img){
+  document.getElementById("modalTitle").innerText=title;
+  document.getElementById("modalDesc").innerText=desc;
+  document.getElementById("modalImg").src=img;
+  document.getElementById("productModal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("productModal").style.display="none";
+}
+</script>
 
 </body>
 </html>
